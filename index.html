@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10.1</title>
+      
+      <link rel="stylesheet" href="vendor/flickity.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="vendor/normalize.css"> 
+</head>  
+<body> 
+
+     <div id="result" class="carousel" >
+    </div>
+<script id="template-list" type="x-tmpl-mustache">
+    {{{carousel}}}
+</script>
+ 
+<script id="template-slide" type="x-tmpl-mustache">
+    <div class="carousel-cell" id="{{id}}"style="background-image: url('{{image}}')">
+        <p class="carousel__paragraph">{{text}}</p>
+       
+    </div>
+</script>
+
+    
+<div class="button-group">
+  <button class="button">RESTART</button>
+</div>
+
+<div class="progress-bar"></div>
+<div id="map" class="google-map"></div>
+
+<div class="car__links">
+   <a class="links" href="#carousel-cell1">View cell 1</a>
+   <a class="links" href="#carousel-cell2">View cell 2</a>
+   <a class="links" href="#carousel-cell3">View cell 3</a>
+   <a class="links" href="#carousel-cell4">View cell 4</a>
+   <a class="links" href="#carousel-cell5">View cell 5</a>
+   
+</div>
+
+<script src="vendor/flickity.pkgd.min.js"></script>
+<script src="vendor/hash.js"></script>
+<script src="vendor/mustache.js"></script>
+<script src="js/script.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZULirBhft05IoVABz-G3ZZD9qnKXGIws&callback=initMap"></script>
+</body>
+</html>
