@@ -80,19 +80,28 @@ window.initMap = function() {
             zoom: 10,
             center: carouselData[0].coords
         });
+      
 
+      function addListenerToCurrentMarker(marker, i){
+        marker.addListener('click', function(){
+            flkty.selectCell(i);
+        });
+      }    
+      
         for (var i = 0; i < carouselData.length; i++ ){
 
             var marker = new google.maps.Marker({
             position: carouselData[i].coords,
             map: map
             });
-
-            marker.addListener('click', function(){
-            flkty.selectCell(i);
-            });
+          addListenerToCurrentMarker(marker, i);       
         } 
-         flkty.on('change', function(index) {
+
+
+            
+
+
+        flkty.on('change', function(index) {
         map.panTo(carouselData[index].coords); 
         map.setZoom(10);
 });    
