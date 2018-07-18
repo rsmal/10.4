@@ -83,23 +83,19 @@ window.initMap = function() {
       
 
       function addListenerToCurrentMarker(marker, i){
-        marker.addListener('click', function(){
-            flkty.selectCell(i);
+          marker.addListener('click', function(){
+          flkty.selectCell(i);
         });
       }    
       
-        for (var i = 0; i < carouselData.length; i++ ){
+        for (let i = 0; i < carouselData.length; i++ ){
 
             var marker = new google.maps.Marker({
             position: carouselData[i].coords,
             map: map
             });
-          addListenerToCurrentMarker(marker, i);       
+             addListenerToCurrentMarker(marker, i);       
         } 
-
-
-            
-
 
         flkty.on('change', function(index) {
         map.panTo(carouselData[index].coords); 
